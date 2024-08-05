@@ -1,0 +1,33 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>true</withJansi>
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern> %cyan(%d{yyyy-MM-dd HH:mm:ss.SSS Z}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) [%X{context}][%X{username}][%X{remoteAddr}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+    <logger name="io.micronaut.http.client" level="INFO"/>
+    <logger name="sn.sensoft.aicha" level="INFO"/>
+<!--
+   <logger name="io.micronaut.http.client" level="TRACE"/>
+-->
+   <logger name="org.springframework.security" level="INFO"/>
+   <logger name="org.hibernate.orm.deprecation" level="ERROR"/>
+   <logger name="io.micronaut.core.optim.StaticOptimizations" level="ERROR"/>
+   <logger name="okhttp3" level="INFO"/>
+
+   <!--
+   <logger name="org.hibernate.SQL" level="debug" additivity="false">
+       <appender-ref ref="STDOUT"/>
+   </logger>
+   <logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
+       <appender-ref ref="STDOUT"/>
+   </logger>
+   -->
+</configuration>

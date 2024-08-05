@@ -1,0 +1,88 @@
+/* here you can put your own css to customize and override the theme */
+
+.attachments-sections ul li .details .buttons .file-size {
+    margin-right: 10px;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+}
+
+.attachments-sections ul li .details .buttons a {
+    font-size: 0.875rem;
+    margin-right: 10px;
+}
+
+.attachments-sections ul li .details .buttons a:last-child {
+    margin-right: 0;
+}
+
+.attachments-sections ul li .thumb, .attachments-sections ul li .details .buttons {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.attachments-sections ul li .details p.file-name {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    white-space: nowrap;
+    display: block;
+    margin-bottom: 0;
+    color: #2e383e;
+}
+
+.attachments-sections ul li .thumb i {
+    font-size: 30px;
+    margin: 0;
+    color: #2e383e;
+}
+
+.attachments-sections ul li .thumb {
+    justify-content: center !important;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.attachments-sections ul li {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    padding: 10px;
+    margin-right: 20px;
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    overflow-x: scroll;
+    margin-bottom: 3px;
+    background-color: aliceblue;
+}
+
+.attachments-sections ul {
+    /*list-style: none;*/
+    /*border-top: 1px solid #f2f2f2;*/
+    /*padding: 30px 15px 20px;*/
+}
+
+.align-div
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.align-p
+{
+    margin-left: 1%;
+}
+
+.date-size
+{
+    font-style: italic;
+    font-size: 10px;
+}
+
+.file-name
+{
+    font-weight: bold;
+}
+
+
+
+

@@ -1,0 +1,60 @@
+<configuration scan="true">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS Z}) %gray([%thread]) %highlight(%-5level) %magenta(%logger{36}) [%X{context}][%X{username}][%X{remoteAddr}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- <file>/tmp/aichav4.log</file> -->
+        <file>${LOG_FILENAME}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover. Make sure the path matches the one in the file element or else
+             the rollover logs are placed in the working directory. -->
+            <fileNamePattern>${LOG_FILENAME}_%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS Z} [%thread] %-5level %logger{36} [%X{context}][%X{username}][%X{remoteAddr}] - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <logger name="io.micronaut.http.client" level="INFO"/>
+    <logger name="sn.sensoft.aicha" level="INFO"/>
+<!--
+   <logger name="io.micronaut.http.client" level="TRACE"/>
+-->
+   <logger name="io.micronaut.http.client" level="TRACE"/>
+   <logger name="org.springframework.security" level="INFO"/>
+   <logger name="org.hibernate.orm.deprecation" level="ERROR"/>
+   <logger name="io.micronaut.core.optim.StaticOptimizations" level="ERROR"/>
+   <logger name="okhttp3" level="INFO"/>
+   <logger name="sn.sensoft.springbatch.ToolsBatchService" level="DEBUG"/>
+   <logger name="org.springframework.web.servlet.PageNotFound" level="DEBUG"/>
+   <logger name="springbatch.batch.asynchroneResponse.ItemReaderAsync" level="DEBUG"/>
+   <logger name="sn.sensoft.springbatch.BatchController" level="DEBUG"/>
+   <logger name="springbatch.batch.synchroneResponse.ItemReaderSync" level="DEBUG"/>
+   <logger name="org.grails.config.NavigableMap" level="ERROR"/>
+
+   <!--
+   <logger name="org.hibernate.SQL" level="debug" additivity="false">
+       <appender-ref ref="STDOUT"/>
+   </logger>
+   <logger name="org.hibernate.type.descriptor.sql" level="trace" additivity="false">
+       <appender-ref ref="STDOUT"/>
+   </logger>
+   -->
+</configuration>

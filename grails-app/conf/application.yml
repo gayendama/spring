@@ -1,0 +1,327 @@
+---
+server:
+    contextPath: /springbatch
+    port: ${SERVER_PORT:8098}
+
+---
+grails:
+    profile: web
+    codegen:
+        defaultPackage: springbatch
+    gorm:
+        reactor:
+            # Whether to translate GORM events into Reactor events
+            # Disabled by default for performance reasons
+            events: false
+info:
+    app:
+        name: '@info.app.name@'
+        version: '@info.app.version@'
+        grailsVersion: '@info.app.grailsVersion@'
+spring:
+    jmx:
+        unique-names: true
+    main:
+        banner-mode: "off"
+    groovy:
+        template:
+            check-template-location: false
+    devtools:
+        restart:
+            additional-exclude:
+                - '*.gsp'
+                - '**/*.gsp'
+                - '*.gson'
+                - '**/*.gson'
+                - 'logback.groovy'
+                - '*.properties'
+    cloud:
+        consul:
+            discovery:
+                prefer-ip-address: true
+                health-check-path: ${server.servlet.context-path:}/actuator/health
+                health-check-interval: 15s
+                health-check-timeout: 90s
+                health-check-critical-timeout: 3m
+                instanceId: ${spring.application.name}-${server.port}-${spring.cloud.client.ip-address}
+            client:
+                registration:
+                    enabled: false
+                defaultZone : "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
+            config:
+                enabled: false
+
+
+
+---
+management:
+    endpoints:
+        enabled-by-default: false
+
+---
+grails:
+    mime:
+        disable:
+            accept:
+                header:
+                    userAgents:
+                        - Gecko
+                        - WebKit
+                        - Presto
+                        - Trident
+        types:
+            all: '*/*'
+            atom: application/atom+xml
+            css: text/css
+            csv: text/csv
+            form: application/x-www-form-urlencoded
+            html:
+              - text/html
+              - application/xhtml+xml
+            js: text/javascript
+            json:
+              - application/json
+              - text/json
+            multipartForm: multipart/form-data
+            pdf: application/pdf
+            rss: application/rss+xml
+            text: text/plain
+            hal:
+              - application/hal+json
+              - application/hal+xml
+            xml:
+              - text/xml
+              - application/xml
+    urlmapping:
+        cache:
+            maxsize: 1000
+    controllers:
+        defaultScope: singleton
+    converters:
+        encoding: UTF-8
+    views:
+        default:
+            codec: html
+        gsp:
+            encoding: UTF-8
+            htmlcodec: xml
+            codecs:
+                expression: html
+                scriptlet: html
+                taglib: none
+                staticparts: none
+
+---
+
+environments:
+    development:
+        hibernate:
+            allow_update_outside_transaction: true
+            flush:
+                mode: COMMIT
+            cache:
+                queries: false
+                use_second_level_cache: false
+                use_query_cache: false
+
+    production:
+        hibernate:
+            allow_update_outside_transaction: true
+            flush:
+                mode: COMMIT
+            cache:
+                queries: false
+                use_second_level_cache: false
+                use_query_cache: false
+    test:
+        allow_update_outside_transaction: true
+        hibernate:
+            flush:
+                mode: COMMIT
+            cache:
+                queries: false
+                use_second_level_cache: false
+                use_query_cache: false
+
+---
+dataSource:
+    pooled: true
+    jmxExport: false
+
+
+environments:
+    development:
+        logging:
+            config: classpath:logback-development.xml
+        dataSource:
+            logSql: false
+            dbCreate: update
+            driverClassName: org.postgresql.Driver
+            username: ${CONF_DEV_DB_USER}
+            password: ${CONF_DEV_DB_PASSWORD}
+            url: ${CONF_DEV_DB_URL}
+
+            properties:
+                jmxEnabled: false
+                initialSize: 5
+                maxActive: 50
+                minIdle: 5
+                maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: "SELECT 1"
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                ignoreExceptionOnPreLoad: true
+                # http://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#JDBC_interceptors
+                jdbcInterceptors: "ConnectionState;StatementCache(max=200)"
+                defaultTransactionIsolation: 2 # safe default
+                # controls for leaked connections
+                abandonWhenPercentageFull: 100 # settings are active only when pool is full
+                removeAbandonedTimeout: 120
+                removeAbandoned: true
+                # use JMX console to change this setting at runtime
+                logAbandoned: false # causes stacktrace recording overhead, use only for debugging
+                dbProperties:
+                    autoReconnect: false
+                    # truncation behaviour
+                    jdbcCompliantTruncation: false
+                    # mysql 0-date conversion
+                    zeroDateTimeBehavior: 'convertToNull'
+                    # Tomcat JDBC Pool's StatementCache is used instead, so disable mysql driver's cache
+                    cachePrepStmts: false
+                    cacheCallableStmts: false
+                    # Tomcat JDBC Pool's StatementFinalizer keeps track
+                    dontTrackOpenResources: true
+                    # performance optimization: reduce number of SQLExceptions thrown in mysql driver code
+                    holdResultsOpenOverStatementClose: true
+                    # enable MySQL query cache - using server prep stmts will disable query caching
+                    useServerPrepStmts: false
+                    # metadata caching
+                    cacheServerConfiguration: true
+                    cacheResultSetMetadata: true
+                    metadataCacheSize: 100
+                    # timeouts for TCP/IP
+                    connectTimeout: 15000
+                    socketTimeout: 120000
+                    # timer tuning (disable)
+                    maintainTimeStats: false
+                    enableQueryTimeouts: false
+                    # misc tuning
+                    noDatetimeStringSync: true
+    test:
+        logging:
+            config: classpath:logback-test.xml
+        dataSource:
+            logSql: false
+            dbCreate: create
+            driverClassName: org.h2.Driver
+            username: sa
+            password:
+            url: jdbc:h2:mem:testAicha;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE;MODE=PostgreSQL
+            properties:
+                jmxEnabled: false
+                initialSize: 5
+                maxActive: 50
+                minIdle: 5
+                maxIdle: 25
+                maxWait: 10000
+                maxAge: 600000
+                timeBetweenEvictionRunsMillis: 5000
+                minEvictableIdleTimeMillis: 60000
+                validationQuery: "SELECT 1"
+                validationQueryTimeout: 3
+                validationInterval: 15000
+                testOnBorrow: true
+                testWhileIdle: true
+                testOnReturn: false
+                ignoreExceptionOnPreLoad: true
+                # http://tomcat.apache.org/tomcat-7.0-doc/jdbc-pool.html#JDBC_interceptors
+                jdbcInterceptors: "ConnectionState;StatementCache(max=200)"
+                defaultTransactionIsolation: 2 # safe default
+                # controls for leaked connections
+                abandonWhenPercentageFull: 100 # settings are active only when pool is full
+                removeAbandonedTimeout: 120
+                removeAbandoned: true
+                # use JMX console to change this setting at runtime
+                logAbandoned: false # causes stacktrace recording overhead, use only for debugging
+                dbProperties:
+                    autoReconnect: false
+                    # truncation behaviour
+                    jdbcCompliantTruncation: false
+                    # mysql 0-date conversion
+                    zeroDateTimeBehavior: 'convertToNull'
+                    # Tomcat JDBC Pool's StatementCache is used instead, so disable mysql driver's cache
+                    cachePrepStmts: false
+                    cacheCallableStmts: false
+                    # Tomcat JDBC Pool's StatementFinalizer keeps track
+                    dontTrackOpenResources: true
+                    # performance optimization: reduce number of SQLExceptions thrown in mysql driver code
+                    holdResultsOpenOverStatementClose: true
+                    # enable MySQL query cache - using server prep stmts will disable query caching
+                    useServerPrepStmts: false
+                    # metadata caching
+                    cacheServerConfiguration: true
+                    cacheResultSetMetadata: true
+                    metadataCacheSize: 100
+                    # timeouts for TCP/IP
+                    connectTimeout: 15000
+                    socketTimeout: 120000
+                    # timer tuning (disable)
+                    maintainTimeStats: false
+                    enableQueryTimeouts: false
+                    # misc tuning
+                    noDatetimeStringSync: true
+    production:
+        logging:
+            config: classpath:logback-prod.xml
+        dataSource:
+            dbCreate: update
+            jndiName: "java:comp/env/jdbc/aicha"
+
+---
+plugin:
+    springBatch:
+        loadTables: false
+        database: postgres
+
+---
+# consul java client integration
+consulclient:
+    enabled: false
+    application:
+        name: "springbatch"
+        tags:
+            - Batch
+            - Automatic processing
+    consul:
+        host: localhost
+        port: 8500
+        discovery:
+            healthCheckPath: /health
+            health-check-url: http://springbatch:${server.port}
+            healthCheckInterval: 5s  # default 15s, use 5s to increase frequency for dev refresh
+#                instanceId: grails335-service:${server.port}
+
+---
+apicom:
+    url: ${COM_API_URL}
+    context: ${COM_API_CONTEXT}
+
+aicha:
+    url: ${AICHA_API_URL}
+
+auth:
+    url: ${AUTH_URL}
+    loginUri: ${AUTH_LOGIN_URI}
+
+micronaut:
+    http:
+        client:
+            read-timeout: 60s
+

@@ -1,0 +1,14 @@
+/*
+*= require default
+*= require component
+*= require_self
+*/
+
+a {
+    color: #6cbfee;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #47a3da;
+}

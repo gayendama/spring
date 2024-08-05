@@ -1,0 +1,33 @@
+.batch-result{
+    color: white;
+    background: red;
+    padding-left: 5px;
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.status-background-white{background: white; color: black; border: lightgrey solid 0.5px}
+.status-background-red{background: red;}
+.status-background-green{background: green;}
+.status-background-grey{background: grey;}
+.status-background-orange{background: orange;}
+
+.report{width: fit-content;}
+.report-content{float: left; min-width: 200px; margin: 10px; text-align: center;}
+
+.step-container{width: 100%; height: content-box; border: #ddd 1px solid; padding-left: 3px; padding-right: 3px}
+.step-box{width: 100%; height: content-box; background: #f5f5f5; border-bottom: #ddd 1px solid; text-align: center; font-size: 18px; font-weight: bold; margin-bottom: 5px}
+
+.action{margin-right: 15px;}
+
+.edit-step{padding: 5px; border: 1px #CCC solid; float: right; cursor: pointer;}
+.edit-step:hover{background: #CCC;}
+.btn-done{background-color: #1BBC9B; border-color: #1BBC9B; color: #FFFFFF; padding: 5px; border: 1px #CCC solid; margin-left: 10px; cursor: pointer; border-radius: 3px;}
+.btn-done:hover{background: #43A047;}
+.seq-input{width: 70px; text-align: center;}
+
+.enabled-action-color{color: #67809F}
+.disabled-action-color{color: #CCCCCC}

@@ -1,0 +1,138 @@
+[
+  {
+    "menuMapParent": [
+      {
+        "label": "user",
+        "url": "/user",
+        "module": "securite",
+        "isShowable": true,
+        "deleted": false
+      }
+    ],
+    "menuMapChild": [
+      {
+        "label": "user.index",
+        "url": "/user/index",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "user.create",
+        "url": "/user/create",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "user.edit",
+        "url": "/user/edit",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "user.show",
+        "url": "/user/show",
+        "isShowable": true,
+        "deleted": false
+      }
+    ]
+  },
+  {
+    "menuMapParent": [
+      {
+        "label": "role",
+        "url": "/role",
+        "module": "securite",
+        "isShowable": true,
+        "deleted": false
+      }
+    ],
+    "menuMapChild": [
+      {
+        "label": "role.index",
+        "url": "/role/index",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "role.create",
+        "url": "/role/create",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "role.edit",
+        "url": "/role/edit",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "role.show",
+        "url": "/role/show",
+        "isShowable": true,
+        "deleted": false
+      }
+    ]
+  },
+  {
+    "menuMapParent": [
+      {
+        "label": "batch",
+        "url": "/batch",
+        "module": "securite",
+        "isShowable": true,
+        "deleted": false
+      }
+    ],
+    "menuMapChild": [
+      {
+        "label": "batch.index",
+        "url": "/batch/index",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "batch.list",
+        "url": "/batch/list",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "batch.journal",
+        "url": "/batch/journal",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "logActivity.recherche",
+        "url": "/logActivity/recherche",
+        "isShowable": true,
+        "deleted": false
+      }
+    ]
+  },
+  {
+    "menuMapParent": [
+      {
+        "label": "quartz",
+        "url": "/quartz",
+        "module": "securite",
+        "isShowable": true,
+        "deleted": false
+      }
+    ],
+    "menuMapChild": [
+      {
+        "label": "quartz.index",
+        "url": "/quartz/index",
+        "isShowable": true,
+        "deleted": false
+      },
+      {
+        "label": "quartz.list",
+        "url": "/quartz/list",
+        "isShowable": true,
+        "deleted": false
+      }
+    ]
+  }
+]

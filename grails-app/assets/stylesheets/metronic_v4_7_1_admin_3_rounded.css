@@ -1,0 +1,352 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS file within this directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the top of the
+* compiled file, but it's generally better to create a new file per style scope.
+*
+*= require global/plugins/font-awesome/css/font-awesome.min
+*= require global/plugins/simple-line-icons/simple-line-icons.min
+*= require global/plugins/bootstrap/css/bootstrap.min
+*= require global/plugins/bootstrap-switch/css/bootstrap-switch.min
+*= require global/plugins/bootstrap-modal/css/bootstrap-modal-bs3patch
+*= require global/plugins/bootstrap-modal/css/bootstrap-modal
+*= require global/plugins/bootstrap-select/css/bootstrap-select.min
+*= require global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min
+*= require global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min
+*= require global/plugins/bootstrap-fileinput/bootstrap-fileinput.css
+*= require global/plugins/select2/css/select2.min
+*= require global/plugins/select2/css/select2-bootstrap.min
+*= require global/plugins/datatables/plugins/bootstrap/datatables.bootstrap
+*= require global/plugins/ladda/ladda-themeless.min
+*= require global/plugins/bootstrap-sweetalert/sweetalert2.min.css
+*= require global/plugins/bootstrapTable/css/bootstrap-table
+*
+*= require global/css/components-rounded.min
+*= require global/css/plugins.min
+*
+*= require pages/css/profile.min
+*
+*= require layouts/layout3/css/layout.min
+*= require layouts/layout3/css/themes/default.min
+*= require layouts/layout3/css/custom.min
+*= require layouts/layout3/css/custom.css
+
+*/
+
+.page-logo-right {
+    float: right;
+    display: block;
+    height: 75px;
+    border-right: 1px solid;
+    border-color: #dae3eb;
+    width: auto;
+    margin-right: 20px;
+    padding-top: 10px;
+    padding-right: 30px;
+}
+
+.logo-header {
+    margin: 5px 0 5px;
+    max-width: 100px;
+    max-height: 70px;
+}
+
+.form .form-actions.top, .portlet-form .form-actions.top {
+    margin-bottom: 0px;
+}
+
+.form .form-body, .portlet-form .form-body {
+    padding: 0 20px;
+}
+
+.alert {
+    margin-bottom: 5px;
+}
+
+.profile-userpic img {
+    -webkit-border-radius: 0% !important;
+    border-radius: 0% !important;
+}
+
+.bg-grey-cararra {
+    background: #fafafa !important;
+}
+
+.col-md-8 {
+    width: 64%;
+}
+
+.padding-tb-0px {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
+
+.padding-top-0px {
+    padding-top: 0px !important;
+}
+
+.padding-bottom-0px {
+    padding-bottom: 0px !important;
+}
+
+.padding-rl-0px {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+.padding-left-0px {
+    padding-left: 0px !important;
+}
+
+.padding-right-0px {
+    padding-right: 0px !important;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+.selection-list {
+    overflow-y: auto !important;
+}
+
+.show-info {
+    padding: 0 !important;
+}
+
+.bg-grey-light {
+    background: #f9f9f9 !important;
+}
+
+.mt-element-ribbon .ribbon-content {
+    margin: 0;
+    padding: 25px 25px 1px !important;
+    clear: both;
+}
+
+.dropdown-user > a.dropdown-toggle {
+    background-color: transparent !important;
+}
+
+.line-height-1-6 {
+    line-height: 1.62857 !important;
+}
+
+.m-grid-col-default {
+    border: inherit !important;
+    background: inherit !important;
+    height: inherit !important;
+}
+
+.profile-sidebar-small {
+    float: right;
+    width: 200px;
+    margin-left: 5px;
+}
+
+.date-picker {
+    width: 100% !important;
+}
+
+.breadcrumb {
+    border-left: 1px solid;
+    border-color: #dae3eb;
+    padding: .5em .5em;
+    display: inline-block;
+    margin-top: 17px;
+}
+
+.page-404, .page-500 {
+    text-align: center;
+}
+
+.page-404 .number, .page-500 .number {
+    letter-spacing: -10px;
+    line-height: 128px;
+    font-size: 128px;
+    font-weight: 300;
+    position: relative;
+    top: 35px;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: right;
+}
+
+.page-404 .details, .page-500 .details {
+    margin-left: 40px;
+    position: relative;
+    display: inline-block;
+    padding-top: 0;
+    text-align: left;
+}
+
+.page-404 .details .btn, .page-500 .details .btn {
+    margin-top: 15px;
+}
+
+.search {
+    margin-bottom: 5px;
+}
+
+.m-l-10 {
+    margin-left: 10px;
+}
+
+.form .form-actions-no-padding, .portlet-form .form-actions-no-padding {
+    padding: 0px;
+    margin: 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #e7ecf1;
+}
+
+/*.tabbable{*/
+    /*margin: 2%;*/
+/*}*/
+
+#formInfoClient #infosPersonneClient{
+    background-color: #fbfbfb;
+}
+.nav-tabs.nav-justified {
+    margin-bottom: -2px;
+}
+
+.nav-tabs {
+    background-color: #eee;
+    box-shadow: 0 0 4px rgba(0,0,0,.3);
+}
+
+.tab-content {
+    background-color: #fbfbfb;
+    padding: 16px 12px;
+    box-shadow: 1px 0 10px 1px rgba(0,0,0,0);
+
+}
+
+.nav-tabs.nav-justified>.active>a, .nav-tabs.nav-justified>.active>a:hover, .nav-tabs.nav-justified>.active>a:focus {
+    border: 0;
+    border-top: 2px solid #2dc3e8;
+    background-color: #fbfbfb;
+}
+
+.nav-tabs>li.active.tab-orange>a {
+    border-color: #df5138 !important;
+}
+
+.nav-tabs>li.active.tab-green>a {
+    border-color: #2adf3a !important;
+}
+
+.nav-tabs>li.active.tab-yellow>a {
+    border-color: #dddf19 !important;
+}
+
+.nav-tabs>li.active.tab-purple>a {
+    border-color: #db23df !important;
+}
+
+.nav-tabs>li.active.tab-blue>a {
+    border-color: #2dc3e8 !important;
+}
+
+.nav-tabs>li.active.tab-red>a {
+    border-color: #DF0508 !important;
+}
+
+.nav-tabs>li.active.tab-deeppurple>a {
+    border-color: #5D13DF !important;
+}
+
+.nav-tabs>li.active.tab-deepblue>a {
+    border-color: #152CDF !important;
+}
+
+.required-indicator{
+    color: #df5138;
+}
+
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+    from {-webkit-transform:rotate(0deg);}
+    to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    color: #337ab7;
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+
+.grey{
+    color: grey !important;
+}
+
+.col-4-button{
+    margin-right: 9%!important;
+    padding-left: 0px;
+    float: right;
+}
+.col-6-button{
+    margin-right: 6%!important;
+    padding-left: 0px;
+    float: right;
+}
+.col-3-button{
+    margin-right: 7.4%!important;
+    padding-left: 0px;
+    float: right;
+}
+
+.min-100{
+    min-width: 100px;
+}
+.min-100-marge{
+    min-width: 100px;
+    margin-left: 10px;
+}
+.marge-5-5{
+    margin-left: 5%;
+    margin-right: 5%
+}
+.consultation{
+    border-top: 1px solid #e7ecf1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header-neem{
+    background: #1c4019!important;
+}
+.footer-neem{
+    background: #586142!important;
+}
+.form-neem{
+    background-color: #e6f2c9!important;
+}
+
+

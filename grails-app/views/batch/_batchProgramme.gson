@@ -1,0 +1,13 @@
+import sn.sensoft.springbatch.parametrage.ProgrammeBatch
+
+model {
+    ProgrammeBatch programmeBatch
+}
+json {
+    id programmeBatch.id
+    code programmeBatch.codeProgramme
+    nom programmeBatch.nomProgramme
+    libelle programmeBatch.libelleProgramme
+    sequenceNumber programmeBatch?.sequenceNumber
+    status programmeBatch?.batchStepStatus?.id
+}

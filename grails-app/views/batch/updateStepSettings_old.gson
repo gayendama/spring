@@ -1,0 +1,10 @@
+import sn.sensoft.springbatch.parametrage.ProgrammeBatch
+
+model {
+    List<ProgrammeBatch> programmeBatch
+}
+json {
+    if (programmeBatch != null) {
+        programmeBatch tmpl.batchProgramme('programmeBatch', programmeBatch)
+    }
+}

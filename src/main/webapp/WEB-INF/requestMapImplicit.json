@@ -1,0 +1,29 @@
+[
+  {
+    "urlParent": "/dashboard",
+    "urlImplicits": [
+      {
+        "urlImplicit": "/dashboard/choixBureau",
+        "acces": "fullyAuthenticated"
+      },
+      {
+        "urlImplicit": "/dashboard/changeBureau/loginForm",
+        "acces": "fullyAuthenticated"
+      },
+      {
+        "urlImplicit": "/dashboard/renderLogo",
+        "acces": "fullyAuthenticated"
+      }
+    ]
+  },
+  {
+    "urlParent": "/user/index",
+    "comment": "Si acces est vide, l'accés est récupéré des droits de l'url implicite",
+    "urlImplicits": [
+      {
+        "urlImplicit": "/user/loadData",
+        "acces": ""
+      }
+    ]
+  }
+]
